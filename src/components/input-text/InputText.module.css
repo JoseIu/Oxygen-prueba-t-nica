@@ -1,0 +1,25 @@
+.container {
+	position: relative;
+	/* height: 22px; */
+}
+.input {
+	width: 100%;
+
+	padding: 0.3em 0em 0.3em 0.3em;
+	border-bottom: 0.0625rem solid #fff;
+}
+.input:focus {
+	outline: none;
+}
+.inputerror {
+	outline: 0.0625rem solid var(--red);
+}
+
+.error {
+	padding-left: 0.3em;
+	font-size: var(--text-sm);
+}
+
+.error {
+	color: var(--red);
+}
