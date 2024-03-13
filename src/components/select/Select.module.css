@@ -1,0 +1,29 @@
+.select {
+	position: relative;
+}
+.select__select {
+	width: 100%;
+
+	padding: 0.3em 2em 0.3em 0.3em;
+
+	border-bottom: 0.0625rem solid #fff;
+}
+
+.select__select:focus {
+	outline: none;
+}
+
+.select__arrow {
+	position: absolute;
+	width: 1.3em;
+	top: 0.25em;
+	right: 0.5em;
+	pointer-events: none;
+	transition: all 0.2s ease;
+}
+.select__select:focus + .select__arrow {
+	transform: rotate(180deg);
+}
+.select__select:not(:focus) + .select__arrow {
+	transform: rotate(0);
+}
