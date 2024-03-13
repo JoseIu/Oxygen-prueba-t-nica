@@ -1,0 +1,10 @@
+.button {
+	cursor: pointer;
+}
+.button__icon {
+	width: 1.3em;
+}
+.button:disabled {
+	color: rgba(211, 211, 211, 0.582);
+	pointer-events: none;
+}
