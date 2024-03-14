@@ -1,3 +1,6 @@
+import { deleteSaved } from '../../lib/api/savedApi';
+import IconButton from '../buttons/IconButton';
+import CrossIcon from '../icons/CrossIcon';
 import style from './SavedRow.module.css';
 
 const SavedRow = ({
@@ -12,26 +15,19 @@ const SavedRow = ({
 		<span>
 			{convert} {convertKey} - {converTo} {converToKey}
 		</span>
-		<button onClick={() => deleteSaved(id, reloadPage)}>x</button>
+		<IconButton
+			icon={CrossIcon}
+			onClick={() => onDeleteSaved(id, reloadPage)}
+		/>
 	</li>
 );
 
-const deleteSaved = async (id, reloadPage) => {
+const onDeleteSaved = async (id, reloadPage) => {
 	if (!id) return;
-	try {
-		const response = await fetch(`http://localhost:3000/saved/${id}`, {
-			method: 'DELETE',
-			headers: { 'Content-Type': 'aplication/json' },
-		});
-		console.log(response);
-		if (!response.ok) return 'Error deleting saved values 😥';
 
-		reloadPage();
+	const succes = await deleteSaved(id);
 
-		return 'Deleted successfully 🚀';
-	} catch (error) {
-		return 'Internal erros 😅 💻 ';
-	}
+	if (!succes.error) reloadPage();
 };
 
 export default SavedRow;
