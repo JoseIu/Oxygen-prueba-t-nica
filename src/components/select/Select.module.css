@@ -1,4 +1,6 @@
 .select {
+	width: 100%;
+
 	position: relative;
 }
 .select__select {
