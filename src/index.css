@@ -1,9 +1,18 @@
 @charset "UTF-8";
+@font-face {
+	font-family: 'Poppins';
+	src: url('./fonts/Poppins-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('./fonts/Poppins-Regular.woff') format('woff');
+}
 
 :root {
 	--negro: #393939;
 	/* Tipografía */
-	--tipo-principal: Helvetica, Arial, sans-serif;
+	--tipo-principal: 'Poppins', Arial, sans-serif;
 	--tipo-secundaria: Verdana;
 }
 
