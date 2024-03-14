@@ -9,23 +9,29 @@
 	grid-template-columns: repeat(1, 1fr);
 	gap: 1.3em;
 }
+
 .form__row {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	gap: 1em;
 }
+@media screen and (max-width: 650px) {
+	.form__row {
+		gap: 1.5em;
+
+		flex-direction: column;
+	}
+}
 .form__item {
 	display: flex;
-	justify-content: center;
 	align-items: end;
-	gap: 0.5em;
+	gap: 1em;
 }
 
 .form__option {
 	color: #222;
 }
 .form__convert {
-	display: flex;
 	width: 3em;
 }
