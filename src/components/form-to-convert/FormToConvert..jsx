@@ -1,5 +1,5 @@
 import { CONVERSION_OPTIONS } from '../../constants/convertOptions';
-import { savedApi } from '../../lib/api/savedApi';
+import { savedValues } from '../../lib/api/savedApi';
 import IconButton from '../buttons/IconButton';
 import ChangeIcon from '../icons/ChangeIcon';
 import HeartIcon from '../icons/HeartIcon';
@@ -17,18 +17,14 @@ const FormToConvert = ({
 	reloadPage,
 }) => {
 	const isDisabled =
-		!selectValue ||
-		!inputValue ||
-		!result ||
-		inputValue === 0 ||
-		result === '0';
+		!selectValue || !inputValue || !result || inputValue === 0 || result === 0;
 
 	return (
 		<form
 			className={style.form}
 			onSubmit={(ev) => {
 				ev.preventDefault();
-				savedValues(selectValue, result, inputValue, reloadPage);
+				onSavedValues(selectValue, result, inputValue, reloadPage);
 			}}
 		>
 			<div className={style.form__row}>
@@ -76,6 +72,7 @@ const FormToConvert = ({
 						</option>
 					</Select>
 					<IconButton
+						type='button'
 						onClick={() => {
 							setCurrentVale(selectValue.converToValue);
 							setInputValue(result);
@@ -86,12 +83,11 @@ const FormToConvert = ({
 				<div className={style.form__item}>
 					<InputText
 						type='number'
-						placeholder='numero'
+						placeholder='write a number'
 						value={inputValue}
 						onChange={(ev) => setInputValue(ev.target.value)}
 					/>
-
-					<span className={style.form__convert}>{selectValue.convert} </span>
+					<span className={style.form__convert}>{selectValue.convert}</span>
 				</div>
 			</div>
 			<div className={style.form__row}>
@@ -112,7 +108,7 @@ const FormToConvert = ({
 	);
 };
 
-const savedValues = async (selectValue, result, inputValue, reloadPage) => {
+const onSavedValues = async (selectValue, result, inputValue, reloadPage) => {
 	const valuesToSave = {
 		id: crypto.randomUUID(),
 		convert: inputValue,
@@ -121,8 +117,9 @@ const savedValues = async (selectValue, result, inputValue, reloadPage) => {
 		converToKey: selectValue.converTo,
 	};
 
-	const sucess = await savedApi(valuesToSave);
-	reloadPage();
+	const sucess = await savedValues(valuesToSave);
+
+	if (!sucess.error) reloadPage();
 };
 
 export default FormToConvert;
