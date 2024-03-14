@@ -7,7 +7,7 @@ const App = () => (
 		<header className='header'>
 			<nav className='wrapper header__nav '>
 				<ChangeIcon className='header__icon' />
-				unit converter
+				<h1 className='header__title'>unit converter</h1>
 			</nav>
 		</header>
 		<main className='main wrapper'>

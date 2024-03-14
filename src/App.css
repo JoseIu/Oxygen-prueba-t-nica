@@ -35,6 +35,10 @@
 	color: rgba(46, 0, 57, 1);
 	width: 1.5em;
 }
+.header__title {
+	font-weight: 600;
+	font-size: 1.5em;
+}
 .footer {
 	position: fixed;
 
