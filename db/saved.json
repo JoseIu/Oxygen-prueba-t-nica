@@ -8,41 +8,6 @@
       "converToKey": "km"
     },
     {
-      "id": "2",
-      "convert": 100,
-      "convertKey": "miles",
-      "converTo": 160,
-      "converToKey": "km"
-    },
-    {
-      "id": "3",
-      "convert": 100,
-      "convertKey": "miles",
-      "converTo": 160,
-      "converToKey": "km"
-    },
-    {
-      "id": "4",
-      "convert": 100,
-      "convertKey": "miles",
-      "converTo": 160,
-      "converToKey": "km"
-    },
-    {
-      "id": "6",
-      "convert": 100,
-      "convertKey": "miles",
-      "converTo": 160,
-      "converToKey": "km"
-    },
-    {
-      "id": "18e9e5cc-20f9-4478-9cea-02943197e17a",
-      "convert": 1,
-      "convertKey": "km",
-      "converTo": 0.62,
-      "converToKey": "miles"
-    },
-    {
       "id": "8f3a8e2a-0be6-4566-92a6-a384b340e343",
       "convert": "3",
       "convertKey": "km",
@@ -50,18 +15,39 @@
       "converToKey": "miles"
     },
     {
-      "id": "41d6dca0-184f-4618-a38d-01fd686cb766",
-      "convert": 1,
+      "id": "8e8201ca-737d-4e92-9a4e-abc5feddf9de",
+      "convert": "22",
       "convertKey": "km",
-      "converTo": 0.62,
+      "converTo": 13.67,
       "converToKey": "miles"
     },
     {
-      "id": "0a96981a-178f-42ab-9a05-919610bfb014",
-      "convert": "2",
+      "id": "78e324f3-02d3-4b18-acad-ddf31d9069c6",
+      "convert": "22",
       "convertKey": "km",
-      "converTo": 1.24,
+      "converTo": 13.67,
       "converToKey": "miles"
+    },
+    {
+      "id": "58e7edbb-6744-415b-8e96-cb7e76fb403e",
+      "convert": "22",
+      "convertKey": "m",
+      "converTo": 72.18,
+      "converToKey": "feet"
+    },
+    {
+      "id": "5d259a07-d745-4306-b7a4-64ce7210156e",
+      "convert": 72.18,
+      "convertKey": "feet",
+      "converTo": 22,
+      "converToKey": "m"
+    },
+    {
+      "id": "c26baa4a-b7b7-4b37-9f35-63912082c825",
+      "convert": 22,
+      "convertKey": "inches",
+      "converTo": 55.88,
+      "converToKey": "cm"
     }
   ]
 }
