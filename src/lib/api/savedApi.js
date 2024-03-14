@@ -1,21 +1,24 @@
-export const savedApi = async (valuesToSave) => {
+export const savedValues = async (valuesToSave) => {
+	const backUrl = import.meta.env.VITE_BACK_URL;
 	try {
-		const response = await fetch('http://localhost:3000/saved', {
+		const response = await fetch(backUrl, {
 			method: 'POST',
 			headers: { 'Content-Type': 'aplication/json' },
 			body: JSON.stringify(valuesToSave),
 		});
-		if (!response.ok) return 'Error to saved values 😥';
-		return 'Saved successfully 🚀';
+		if (!response.ok)
+			return { error: true, message: 'Error to saved values 😥' };
+		return { error: false, message: 'Saved successfully 🚀' };
 	} catch (error) {
-		return 'Internal erros 😅 💻 ';
+		return { error: true, message: 'Internal erros 😅 💻 ' };
 	}
 };
 
 export const getAllSaveds = async (setData, setError, signal) => {
+	const backUrl = import.meta.env.VITE_BACK_URL;
+
 	try {
-		const response = await fetch('http://localhost:3000/saved', { signal });
-		console.log(response);
+		const response = await fetch(backUrl, { signal });
 
 		if (!response.ok) return setError();
 
@@ -23,5 +26,20 @@ export const getAllSaveds = async (setData, setError, signal) => {
 		setData(data);
 	} catch (error) {
 		return setError();
+	}
+};
+export const deleteSaved = async (id) => {
+	const backUrl = import.meta.env.VITE_BACK_URL;
+
+	try {
+		const response = await fetch(`${backUrl}/${id}`, {
+			method: 'DELETE',
+			headers: { 'Content-Type': 'aplication/json' },
+		});
+		if (!response.ok)
+			return { error: true, message: 'Error deleting saved values 😥' };
+		return { error: false, message: 'Deleted successfully 🚀' };
+	} catch (error) {
+		return { error: true, message: 'Internal erros 😅 💻 ' };
 	}
 };
